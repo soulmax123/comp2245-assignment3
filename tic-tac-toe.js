@@ -12,8 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
     
   
   });
+let xIsNext = true;
 
-  
+  function handleMove(square) {
+    if (!square || square.textContent.trim() !== '') return;
+    const mark = xIsNext ? 'X' : 'O';
+    square.textContent = mark;
+    square.classList.add(mark);
+    xIsNext = !xIsNext;
+    updateStatus();
+  }
+  squares.forEach((sq) => {
+    sq.addEventListener('click', function () {
+      handleMove(this);
+    });  
 
-
+})
 });

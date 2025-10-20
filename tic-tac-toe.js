@@ -84,5 +84,22 @@ function checkWinner() {
         sq.addEventListener('mouseenter', () => sq.classList.add('hover'));
     sq.addEventListener('mouseleave', () => sq.classList.remove('hover'));
    
+ const newButton = document.querySelector('.btn');
+  if (newButton) {
+    newButton.addEventListener('click', function () {
+      squares.forEach((sq) => {
+        sq.textContent = '';
+        sq.classList.remove('X', 'O', 'hover');
+      });
+      xIsNext = true;
+      gameOver = false;
+      if (status) {
+        status.classList.remove('you-won');
+      }
+      updateStatus();
+    });
+  }
+
+  
 })
 });

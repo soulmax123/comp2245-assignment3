@@ -27,5 +27,8 @@ let xIsNext = true;
       handleMove(this);
     });  
 
+        sq.addEventListener('mouseenter', () => sq.classList.add('hover'));
+    sq.addEventListener('mouseleave', () => sq.classList.remove('hover'));
+   
 })
 });
